@@ -1,1 +1,7 @@
-<p>gallaries works!</p>
+<div *ngIf="router.url=='/gallaries/photos'">
+    <h3>Photos</h3>
+</div>
+<div *ngIf="router.url=='/gallaries/todos'">
+    <h3>Todos</h3>
+</div>
+<app-table [items]="itemLists" *ngIf="itemLists.length>0"></app-table>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ContentService } from '../../services/content.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  text;
+  imagePath = 'assets/img/1.jpg';
+  constructor(private service: ContentService) { 
+    this.text = this.service.getContent();
+  }
 
   ngOnInit(): void {
   }
